@@ -1,0 +1,44 @@
+.hidden {display: none;}
+
+*, *:before, *:after {@include box_sizing;}
+
+html, body{height:100%;}
+
+.header {
+  position: fixed;
+  top: 0;
+  background-color: $darkGray;
+  width: 100%;
+  * {
+    color: $lightGray;
+  }
+}
+
+.header-inner {
+  width: 80%; 
+  margin: 0 auto;
+}
+
+#logo {
+  display: inline-block;
+  font-size: 3em;
+}
+
+.market-list {
+  font-size: 1.5em;
+  padding-top: 65px;
+  list-style: none;
+  width: 40%;
+  margin: 0 auto;
+  li {
+    @include rounded;
+    border: 1px solid $lightGray;
+    margin: 5px 0 5px 0;
+    padding: 5px 0 5px 10px;
+    background-color: lighten($lightGray, 20%);
+    h3 {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,16 +1,28 @@
-'use strict';
+(function() {
+  var app = angular.module('marketFinder', ['marketFilters']);
+  
+  app.controller('marketsController', ['$http', function ($http) {
+    var markets = this;
+    
+    function navSuccess(pos) {
+      markets.position = pos.coords;
+      markets.markets = [];
+      
+      $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + markets.position.latitude + "&lng=" + markets.position.longitude).success(function(data){
+        markets.markets = data.results;
+      });
+    };
+    function navError(error){};
+    navigator.geolocation.getCurrentPosition(navSuccess, navError);
+  }]);
 
-
-// Declare app level module which depends on filters, and services
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+  app.controller('marketController', ['$http', function($http) {
+    var market = this;
+    this.showDetail = function(id) {
+      $("." + id).toggle();
+      $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id).success(function(data) {
+        market.details = data.marketdetails;
+      });
+    };
+  }]);
+})();
