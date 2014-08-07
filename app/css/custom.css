@@ -300,7 +300,7 @@ body {
 @media only screen and (min-width: 100px) and (max-device-width: 700px) {
   body {
     font-size: 0.4em;
-    background: url("/img/portrait/roll_646.png") no-repeat center center fixed;
+    background: url("/img/landscape/roll_1098.png") fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -308,9 +308,12 @@ body {
 
   .market-list {
     padding-top: 10%;
-    width: 96%;
+    width: 90%;
     font-size: 1.5em;
     margin-bottom: 20%; } }
+@media only screen and (min-width: 100px) and (max-device-width: 700px) and (orientation: portrait) {
+  background: url("/img/portrait/roll_646.png");
+  background-position: fixed; }
 @media only screen and (min-device-width: 700px) and (max-width: 59.999em) {
   .market-list {
     width: 50%; } }
