@@ -54,5 +54,12 @@
         return cleanedInput
       }
     };
+  }).filter('embedMap', function() {
+    return function (input) {
+      if (input) {
+        var cleanedInput =  "https://www.google.com/maps/embed/v1/place" + input.match(/\?q=.+/);
+        return cleanedInput
+      }
+    };
   });
 })();

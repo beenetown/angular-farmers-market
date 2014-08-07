@@ -32,12 +32,9 @@
        <div id="loading" ng-hide="marketsCtl.loaded"><img src="/img/icons/loading.gif"></div>
       <li ng-controller="marketController as marketCtl" ng-repeat="market in marketsCtl.markets">
         <h3 ng-click="marketCtl.showDetail()">{{market.marketname | formatMarketName}}</h3>
-        <span> <a target="_blank" ng-href="{{market.details.GoogleLink}}">map</a></span>
+        <span> - {{market.marketname | formatMarketDistance}} mi.</span>
         <div ng-show="marketCtl.show">
-          <h4>Distance</h4>
-          <p>{{market.marketname | formatMarketDistance}} mi.</p>
-          <h4 ng-show="market.details.Address">Address</h4>
-          <p ng-show="market.details.Address">{{market.details.Address}}</p>
+          <p ng-show="market.details.Address">{{market.details.Address}}</p><span><a target="_blank" ng-href="{{market.details.GoogleLink}}"> map</a></span>
           <h4 ng-show="market.details.Schedule">Schedule</h4>
           <p ng-show="market.details.Schedule">{{market.details.Schedule | removeBreak}}</p>
           <h4 ng-show="market.details.Products">Products Available</h4>

@@ -55,6 +55,9 @@ body {
       display: inline-block;
       cursor: pointer;
     }
+    h4 {
+      margin-top: 0.5em;
+    }
   }
   h2 {
     @include rounded;

@@ -287,6 +287,8 @@ body {
     .market-list li h3 {
       display: inline-block;
       cursor: pointer; }
+    .market-list li h4 {
+      margin-top: 0.5em; }
   .market-list h2 {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
@@ -326,7 +328,7 @@ body {
     background-image: url("/img/portrait/roll_646.png"); } }
 @media only screen and (min-device-width: 700px) and (max-width: 59.999em) {
   .market-list {
-    width: 50%; } }
+    width: 60%; } }
 @media only screen and (min-device-width: 700px) and (min-width: 60em) {
   .market-list {
-    width: 40%; } }
+    width: 50%; } }
