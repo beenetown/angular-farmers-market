@@ -275,6 +275,8 @@ html, body {
     margin: 5px 0 5px 0;
     padding: 5px 0 5px 10px;
     background-color: #eaeaea; }
+    .market-list li:last-of-type {
+      margin-bottom: 5%; }
     .market-list li h3 {
       display: inline-block;
       cursor: pointer; }

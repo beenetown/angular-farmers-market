@@ -42,6 +42,9 @@ html, body{height:100%;}
     margin: 5px 0 5px 0;
     padding: 5px 0 5px 10px;
     background-color: lighten($lightGray, 25%);
+    &:last-of-type {
+      margin-bottom: 5%;
+    }
     h3 {
       display: inline-block;
       cursor: pointer;
