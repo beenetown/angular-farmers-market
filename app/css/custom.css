@@ -253,8 +253,8 @@ html, body {
   margin: 0 auto; }
 
 #logo {
-  display: inline-block;
-  font-size: 3em; }
+  font-size: 3em;
+  text-align: center; }
 
 #loading {
   width: 32px;
@@ -262,12 +262,12 @@ html, body {
   margin-top: 25%; }
 
 .market-list {
-  font-size: 1.5em;
   padding-top: 65px;
   list-style: none;
   width: 40%;
   margin: 0 auto; }
   .market-list li {
+    font-size: 1.5em;
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     border-radius: 0.4em;
@@ -280,6 +280,9 @@ html, body {
     .market-list li h3 {
       display: inline-block;
       cursor: pointer; }
+  .market-list h2 {
+    font-size: 2em;
+    text-align: center; }
 
 @media only screen and (min-width: 100px) and (max-device-width: 700px) {
   #logo {
