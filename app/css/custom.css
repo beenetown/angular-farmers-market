@@ -319,6 +319,9 @@ body {
     .market-list li {
       margin-top: 5%; } }
 @media only screen and (min-width: 100px) and (max-device-width: 700px) and (orientation: portrait) {
+  .market-list {
+    padding-top: 25%; }
+
   body {
     background-image: url("/img/portrait/roll_646.png"); } }
 @media only screen and (min-device-width: 700px) and (max-width: 59.999em) {
