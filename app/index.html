@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
-  
+
   <title>Market Finder</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,19 +28,19 @@
 
   <ul class="market-list" ng-controller='marketsController as marketsCtl'>
     <h2 ng-show="marketsCtl.loaded">Markets Near You - Click for details</h2>
-     <div id="loading" ng-hide="marketsCtl.loaded"><img src="/img/loading.gif"></div>
+     <div id="loading" ng-hide="marketsCtl.loaded"><img src="/img/icons/loading.gif"></div>
     <li ng-controller="marketController as marketCtl" ng-repeat="market in marketsCtl.markets">
       <h3 ng-click="marketCtl.showDetail()">{{market.marketname | formatMarketName}}</h3>
       <span> <a target="_blank" ng-href="{{market.details.GoogleLink}}">map</a></span>
       <div ng-show="marketCtl.show">
         <h4>Distance</h4>
         <p>{{market.marketname | formatMarketDistance}} mi.</p>
-        <h4>Address</h4>
-        <p>{{market.details.Address}}</p>
-        <h4>Schedule</h4>
-        <p>{{market.details.Schedule | removeBreak}}</p>
-        <h4>Products Available</h4>
-        <p>{{market.details.Products | listProducts}}</p>
+        <h4 ng-show="market.details.Address">Address</h4>
+        <p ng-show="market.details.Address">{{market.details.Address}}</p>
+        <h4 ng-show="market.details.Schedule">Schedule</h4>
+        <p ng-show="market.details.Schedule">{{market.details.Schedule | removeBreak}}</p>
+        <h4 ng-show="market.details.Products">Products Available</h4>
+        <p ng-show="market.details.Products">{{market.details.Products | listProducts}}</p>
       </div>
     </li>
   </ul>

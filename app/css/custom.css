@@ -240,13 +240,21 @@ body {
 html, body {
   height: 100%; }
 
+body {
+  color: #111111;
+  background: url("/img/landscape/roll_1098.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 .header {
   position: fixed;
   top: 0;
-  background-color: #111111;
+  background-color: #001028;
   width: 100%; }
   .header * {
-    color: #aaaaaa; }
+    color: #ebeada; }
 
 .header-inner {
   width: 80%;
@@ -271,22 +279,32 @@ html, body {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     border-radius: 0.4em;
-    border: 1px solid #aaaaaa;
     margin: 5px 0 5px 0;
-    padding: 5px 0 5px 10px;
-    background-color: #eaeaea; }
+    padding: 5px 10px 5px 10px;
+    background-color: #ebeada; }
     .market-list li:last-of-type {
       margin-bottom: 5%; }
     .market-list li h3 {
       display: inline-block;
       cursor: pointer; }
   .market-list h2 {
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    border-radius: 0.4em;
     font-size: 2em;
-    text-align: center; }
+    text-align: center;
+    padding: 15px 0 15px 0;
+    color: #ebeada;
+    background-color: #1e5a5b; }
 
 @media only screen and (min-width: 100px) and (max-device-width: 700px) {
   body {
-    font-size: 0.4em; }
+    font-size: 0.4em;
+    background: url("/img/portrait/roll_646.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
 
   .market-list {
     padding-top: 10%;

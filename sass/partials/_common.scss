@@ -4,13 +4,19 @@
 
 html, body{height:100%;}
 
+body {
+  color: $darkGray;
+  background: url('/img/landscape/roll_1098.png') no-repeat center center fixed;
+  @include background_size;
+}
+
 .header {
   position: fixed;
   top: 0;
-  background-color: $darkGray;
+  background-color: $darkBlue;
   width: 100%;
   * {
-    color: $lightGray;
+    color: $offWhite;
   }
 }
 
@@ -38,10 +44,10 @@ html, body{height:100%;}
   li {
     font-size: 1.5em;
     @include rounded;
-    border: 1px solid $lightGray;
+    // border: 1px solid $lightGray;
     margin: 5px 0 5px 0;
-    padding: 5px 0 5px 10px;
-    background-color: lighten($lightGray, 25%);
+    padding: 5px 10px 5px 10px;
+    background-color: $offWhite;
     &:last-of-type {
       margin-bottom: 5%;
     }
@@ -51,7 +57,11 @@ html, body{height:100%;}
     }
   }
   h2 {
+    @include rounded;
     font-size: 2em;
     text-align: center;
+    padding: 15px 0 15px 0;
+    color: $offWhite;
+    background-color: $greenBlue;
   }
 }
