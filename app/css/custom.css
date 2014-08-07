@@ -315,7 +315,7 @@ body {
     padding-top: 10%;
     width: 80%;
     font-size: 1.5em;
-    margin-bottom: 20%; }
+    margin-bottom: 10%; }
     .market-list li {
       margin-top: 5%; } }
 @media only screen and (min-width: 100px) and (max-device-width: 700px) and (orientation: portrait) {
