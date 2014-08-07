@@ -1,6 +1,7 @@
 (function() {
   var app = angular.module('marketFinder', ['marketFilters']);
   
+  
   app.controller('marketsController', ['$http', function ($http) {
     var markets = this;
     markets.loaded = false;
