@@ -24,6 +24,12 @@ html, body{height:100%;}
   font-size: 3em;
 }
 
+#loading {
+  width: 32px;
+  margin: 0 auto;
+  margin-top: 25%;
+} 
+
 .market-list {
   font-size: 1.5em;
   padding-top: 65px;
@@ -35,7 +41,7 @@ html, body{height:100%;}
     border: 1px solid $lightGray;
     margin: 5px 0 5px 0;
     padding: 5px 0 5px 10px;
-    background-color: lighten($lightGray, 20%);
+    background-color: lighten($lightGray, 25%);
     h3 {
       display: inline-block;
       cursor: pointer;

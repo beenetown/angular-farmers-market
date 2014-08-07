@@ -24,29 +24,25 @@
   </div>
 
   <ul class="market-list" ng-controller='marketsController as marketsCtl'>
-    <h2>Markets Near You - Click for details</h2>
+    <h2 ng-show="marketsCtl.loaded">Markets Near You - Click for details</h2>
+     <div id="loading" ng-hide="marketsCtl.loaded"><img src="/img/loading.gif"></div>
     <li ng-controller="marketController as marketCtl" ng-repeat="market in marketsCtl.markets">
-      <h3 ng-click="marketCtl.showDetail(market.id)">{{market.marketname | formatMarketName}}</h3><span> <a target="_blank" ng-href="{{marketCtl.details.GoogleLink}}">map</a></span>
-      <div ng-class="market.id" style='display:none;'>
+      <h3 ng-click="marketCtl.showDetail()">{{market.marketname | formatMarketName}}</h3>
+      <span> <a target="_blank" ng-href="{{market.details.GoogleLink}}">map</a></span>
+      <div ng-show="marketCtl.show">
         <h4>Distance</h4>
         <p>{{market.marketname | formatMarketDistance}} mi.</p>
         <h4>Address</h4>
-        <p>{{marketCtl.details.Address}}</p>
+        <p>{{market.details.Address}}</p>
         <h4>Schedule</h4>
-        <p>{{marketCtl.details.Schedule | removeBreak}}</p>
+        <p>{{market.details.Schedule | removeBreak}}</p>
         <h4>Products Available</h4>
-        <p>{{marketCtl.details.Products | listProducts}}</p>
+        <p>{{market.details.Products | listProducts}}</p>
       </div>
-      
     </li>
   </ul>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
 </body>
 </html>
