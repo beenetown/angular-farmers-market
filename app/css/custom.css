@@ -303,27 +303,30 @@ body {
   body {
     font-size: 0.5em;
     background-image: url("/img/landscape/roll_1098.png");
-    height: 100%;
-    margin: 0;
+    margin: 0 0 50px 0;
     overflow-x: hidden;
-    overflow-y: auto;
     padding: 0;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    overflow-scrolling: touch; }
+
+  .header {
+    position: relative; }
 
   .market-list {
-    padding-top: 10%;
+    padding-top: 5%;
     width: 80%;
     font-size: 1.5em;
     margin-bottom: 10%; }
     .market-list li {
       margin-top: 5%; } }
 @media only screen and (min-width: 100px) and (max-device-width: 700px) and (orientation: portrait) {
-  .market-list {
-    padding-top: 25%; }
-
   body {
     background-image: url("/img/portrait/roll_646.png"); } }
 @media only screen and (min-device-width: 700px) and (max-width: 59.999em) {
