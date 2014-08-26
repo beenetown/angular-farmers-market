@@ -1,9 +1,10 @@
 (function() {
   var app = angular.module('marketFinder', ['marketFilters']);
   
-  app.controller('marketsController', ['$http', function ($http) {
+  app.controller('marketsController', ['$http', '$scope', function ($http, $scope) {
     var markets = this;
     markets.loaded = false;
+
     function navSuccess(pos) {
       markets.position = pos.coords;
       markets.markets = [];
@@ -18,15 +19,38 @@
       });
       markets.loaded = true;
     };
-    function navError(error){};
-    navigator.geolocation.getCurrentPosition(navSuccess, navError);
+
+    $scope.zipSearch = function() 
+    {
+      markets.loaded = false;
+      // markets.markets = [];
+      // markets.zip = 11215
+      $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + markets.zip).success(function(data){
+        markets.markets = data.results;
+        angular.forEach(markets.markets, function (market) {
+          $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market.id).success(function(data) {
+            market.details = data.marketdetails;
+          });
+        });
+      });
+      $scope.$apply();
+      markets.loaded = true;
+    };
+
+    $scope.init = function() {navigator.geolocation.getCurrentPosition(navSuccess);}
+    $scope.init();
   }]);
 
   app.controller('marketController', ['$http', function($http) {
     var market = this;
     market.show = false;
+
     this.showDetail = function() {
-      market.show ? market.show = false : market.show = true;
+      market.show = true;
+    };
+
+    this.hideDetail = function() {
+      market.show = false;
     };
   }]);
 

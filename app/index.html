@@ -28,11 +28,32 @@
     </div>
 
     <ul class="market-list" ng-controller='marketsController as marketsCtl'>
+      <div class="spinner" ng-hide="marketsCtl.loaded">
+        <div class="spinner-container container1">
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
+        </div>
+      </div>
+
       <h2 ng-show="marketsCtl.loaded">Markets Near You - Click for details</h2>
-       <div id="loading" ng-hide="marketsCtl.loaded"><img src="/img/icons/loading.gif"></div>
       <li ng-controller="marketController as marketCtl" ng-repeat="market in marketsCtl.markets">
-        <h3 ng-click="marketCtl.showDetail()">{{market.marketname | formatMarketName}}</h3>
+        <h3 ng-click="marketCtl.showDetail()" ng-class="{shown:marketCtl.show}">{{market.marketname | formatMarketName}}</h3>
         <span> - {{market.marketname | formatMarketDistance}} mi.</span>
+        <span class="hide-detail" ng-show="marketCtl.show" ng-click="marketCtl.hideDetail()">x</span>
         <div ng-show="marketCtl.show">
           <p ng-show="market.details.Address">{{market.details.Address}}</p><span><a target="_blank" ng-href="{{market.details.GoogleLink}}"> map</a></span>
           <h4 ng-show="market.details.Schedule">Schedule</h4>

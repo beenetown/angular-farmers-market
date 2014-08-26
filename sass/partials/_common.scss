@@ -15,19 +15,46 @@ body {
   top: 0;
   background-color: $darkBlue;
   width: 100%;
-  * {
-    color: $offWhite;
-  }
 }
 
 .header-inner {
-  width: 80%; 
+  width: 60%; 
   margin: 0 auto;
 }
 
 #logo {
   font-size: 3em;
+  color: $offWhite;
   text-align: center;
+}
+
+#search {
+  padding: 2px;
+  display: inline;
+  float: right; 
+  background-color: $offWhite;
+  @include rounded;
+  margin-top: 0.42em;
+  #search-img  {
+    display: inline-block;
+    // cursor: pointer;
+    height: 1em;
+    margin: 0.8em 0 0 0.1em;
+  }
+
+  input, input:focus {
+    font-size: 1.3em;
+    outline: none;
+    border: none;
+    display: inline-block;
+    background-color: $offWhite;
+    margin: 0 0 5px 8px;
+    color: $darkGray;
+  }
+
+  input[type=submit] {
+    display: none;
+  }
 }
 
 #loading {
@@ -55,6 +82,7 @@ body {
       display: inline-block;
       cursor: pointer;
     }
+    .shown {cursor: default;}
     h4 {
       margin-top: 0.5em;
     }
@@ -66,5 +94,12 @@ body {
     padding: 15px 0 15px 0;
     color: $offWhite;
     background-color: $greenBlue;
+  }
+
+  .hide-detail {
+    float: right;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
   }
 }
