@@ -51,9 +51,15 @@
 
       <h2 ng-show="marketsCtl.loaded">Markets Near You - Click for details</h2>
       <li ng-controller="marketController as marketCtl" ng-repeat="market in marketsCtl.markets">
-        <h3 ng-click="marketCtl.showDetail()" ng-class="{shown:marketCtl.show}">{{market.marketname | formatMarketName}}</h3>
-        <span> - {{market.marketname | formatMarketDistance}} mi.</span>
-        <span class="hide-detail" ng-show="marketCtl.show" ng-click="marketCtl.hideDetail()">x</span>
+        <span class="hide-detail" ng-show="marketCtl.show" ng-click="marketCtl.hideDetail()">
+          x
+        </span>
+        <h3 ng-click="marketCtl.showDetail()" ng-class="{shown:marketCtl.show}">
+          {{market.marketname | formatMarketName}} 
+          <span>
+             - {{market.marketname | formatMarketDistance}} mi.
+          </span>
+        </h3>
         <div ng-show="marketCtl.show">
           <p ng-show="market.details.Address">{{market.details.Address}}</p><span><a target="_blank" ng-href="{{market.details.GoogleLink}}"> map</a></span>
           <h4 ng-show="market.details.Schedule">Schedule</h4>

@@ -81,6 +81,9 @@ body {
     h3 {
       display: inline-block;
       cursor: pointer;
+      span {
+        font-weight: normal;
+      }
     }
     .shown {cursor: default;}
     h4 {

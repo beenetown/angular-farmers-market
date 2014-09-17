@@ -310,6 +310,8 @@ body {
     .market-list li h3 {
       display: inline-block;
       cursor: pointer; }
+      .market-list li h3 span {
+        font-weight: normal; }
     .market-list li .shown {
       cursor: default; }
     .market-list li h4 {
@@ -460,7 +462,9 @@ body {
     font-size: 1.5em;
     margin-bottom: 10%; }
     .market-list li {
-      margin-top: 5%; } }
+      margin-top: 5%; }
+      .market-list li h3 {
+        width: 95%; } }
 @media only screen and (min-width: 100px) and (max-device-width: 700px) and (orientation: portrait) {
   body {
     background-image: url("/img/portrait/roll_646.png"); } }
