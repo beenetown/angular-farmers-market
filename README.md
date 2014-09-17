@@ -1,2 +1,2 @@
 # To deploy 
-git subtree push --prefix app web master
+git subtree push --prefix app deploy master
