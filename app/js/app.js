@@ -9,13 +9,19 @@
       markets.position = pos.coords;
       markets.markets = [];
       
-      $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + markets.position.latitude + "&lng=" + markets.position.longitude).success(function(data){
+      $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + markets.position.latitude + "&lng=" + markets.position.longitude).
+      success(function(data){
         markets.markets = data.results;
         angular.forEach(markets.markets, function (market) {
-          $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market.id).success(function(data) {
+          $http.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market.id).
+          success(function(data) {
             market.details = data.marketdetails;
           });
         });
+      }).
+      error(function(data, status, headers, config) {
+        alert("Something is up with the API. Investigations have commenced!!");
+        market.details = data;
       });
       markets.loaded = true;
     };
