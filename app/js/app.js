@@ -20,8 +20,15 @@
         });
       }).
       error(function(data, status, headers, config) {
+        console.log("=====data=====");
+        console.log(data);
+        console.log("=====status=====");
+        console.log(status);
+        console.log("=====headers=====");
+        console.log(headers);
+        console.log("=====config=====");
+        console.log(config);
         alert("Something is up with the API. Investigations have commenced!!");
-        market.details = data;
       });
       markets.loaded = true;
     };
