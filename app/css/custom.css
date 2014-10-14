@@ -304,7 +304,8 @@ body {
     border-radius: 0.4em;
     margin: 5px 0 5px 0;
     padding: 5px 10px 5px 10px;
-    background-color: #ebeada; }
+    background-color: #ebeada;
+    box-shadow: 0px 1px 0px 0.5px #3e3d22; }
     .market-list li:last-of-type {
       margin-bottom: 5%; }
     .market-list li h3 {
@@ -324,7 +325,8 @@ body {
     text-align: center;
     padding: 15px 0 15px 0;
     color: #ebeada;
-    background-color: #1e5a5b; }
+    background-color: #1e5a5b;
+    box-shadow: 0px 1px 0px 0.5px #113435; }
   .market-list .hide-detail {
     float: right;
     cursor: pointer;
