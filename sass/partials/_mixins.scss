@@ -37,3 +37,8 @@ border-radius: $radius $radius 0 0;
   -o-transition: background 1s linear;
   transition: background 1s linear;
 }
+
+@mixin semi_transparent_background($color, $opacity) {
+  background-color: $color;
+  background-color: rgba($color, $opacity);
+}
