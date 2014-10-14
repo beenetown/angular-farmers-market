@@ -15,6 +15,7 @@ body {
   top: 0;
   background-color: $darkBlue;
   width: 100%;
+  box-shadow: 0px 5px 2px -1px rgba(lighten($darkBlue, 10%), 0.8);
 }
 
 .header-inner {
@@ -74,8 +75,8 @@ body {
     // border: 1px solid $lightGray;
     margin: 5px 0 5px 0;
     padding: 5px 10px 5px 10px;
-    background-color: $offWhite;
-    box-shadow: 0px 1px 0px 0.5px darken($offWhite, 70%);
+    background-color: rgba($offWhite, 0.7);
+    box-shadow: 0px 1px 1px 0px darken($offWhite, 80%);
     &:last-of-type {
       margin-bottom: 5%;
     }
@@ -97,8 +98,8 @@ body {
     text-align: center;
     padding: 15px 0 15px 0;
     color: $offWhite;
-    background-color: $greenBlue;
-    box-shadow: 0px 1px 0px 0.5px darken($greenBlue, 10%);
+    background-color: rgba($greenBlue, 0.9);
+    box-shadow: 0px 1px 1px 0px darken($greenBlue, 20%);
   }
 
   .hide-detail {

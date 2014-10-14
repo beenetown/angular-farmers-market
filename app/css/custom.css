@@ -252,7 +252,8 @@ body {
   position: fixed;
   top: 0;
   background-color: #001028;
-  width: 100%; }
+  width: 100%;
+  box-shadow: 0px 5px 2px -1px rgba(0, 36, 91, 0.8); }
 
 .header-inner {
   width: 60%;
@@ -304,8 +305,8 @@ body {
     border-radius: 0.4em;
     margin: 5px 0 5px 0;
     padding: 5px 10px 5px 10px;
-    background-color: #ebeada;
-    box-shadow: 0px 1px 0px 0.5px #3e3d22; }
+    background-color: rgba(235, 234, 218, 0.7);
+    box-shadow: 0px 1px 1px 0px #1d1c10; }
     .market-list li:last-of-type {
       margin-bottom: 5%; }
     .market-list li h3 {
@@ -325,8 +326,8 @@ body {
     text-align: center;
     padding: 15px 0 15px 0;
     color: #ebeada;
-    background-color: #1e5a5b;
-    box-shadow: 0px 1px 0px 0.5px #113435; }
+    background-color: rgba(30, 90, 91, 0.9);
+    box-shadow: 0px 1px 1px 0px #050e0e; }
   .market-list .hide-detail {
     float: right;
     cursor: pointer;
